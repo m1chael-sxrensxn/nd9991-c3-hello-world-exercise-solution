@@ -43,7 +43,7 @@ jobs:
           command: |
             export IP=$(tail -n 1 inventory)
             export response=$(curl $IP:3000)
-            if [ $response != 'Hello worl!' ]; then
+            if [ "$response" != 'Hello worl!' ]; then
               return 1
             fi
 
@@ -54,4 +54,6 @@ workflows:
     jobs:
       # - create_infrastructure
       - configure_infrastructure
-      - smoke_test
+      - smoke_test:
+          requires:
+            - configure_infrastructure
