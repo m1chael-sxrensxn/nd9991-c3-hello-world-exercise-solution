@@ -27,8 +27,8 @@ Resources:
           TargetOriginId: webpage
           ViewerProtocolPolicy: allow-all
 
-  Outputs:
-    PipelineID:
-      Value: !Sub ${PipelineID}
-      Export:
-        Name: PipelineID
+Outputs:
+  PipelineID:
+    Value: !Sub ${PipelineID}
+    Export:
+      Name: PipelineID
